@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily V4.0 | Institutional Directional Gold EA</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <h1 class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Lily<span class="gold-text">EA</span></a></h1>
+                <div class="version-tabs">
+                    <a href="lily-v4.html" class="tab-btn active">Lily V4</a>
+                    <a href="lily-aurus-v5.html" class="tab-btn">Aurus V5</a>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#pillars">Architecture</a></li>
+                <li><a href="#signal">Engine</a></li>
+                <li><a href="#risk">Risk</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav">
+        <a href="#pillars">Architecture</a>
+        <a href="#signal">Engine</a>
+        <a href="#risk">Risk</a>
+        <a href="#compliance">Compliance</a>
+        <a href="#results">Backtest</a>
+        <a href="lily-aurus-v5.html">Aurus V5 →</a>
+    </div>
+
+
+    <!-- Hero Section (Slide 1) -->
+    <section class="hero" id="home">
+        <div class="hero-bg" style="background-image: url('assets/hero_bg.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <div class="badge">Institutional Directional Gold EA</div>
+            <h2 class="hero-title">Not Just An EA. <br><span class="gold-glow">A Rules-Based System.</span></h2>
+            <p class="hero-subtitle">Lily EA v4.0 does not rely on simple crossovers. It reads market structure,
+                macroeconomic correlation, and real-time order flow to execute precision trades on XAUUSD, governed by
+                an Adaptive Risk Engine built to pass Prop Firm challenges.</p>
+            <div class="hero-cta">
+                <a href="#overview" class="btn primary-btn">Discover The Logic <span class="arrow">↓</span></a>
+            </div>
+            <div class="tech-specs">
+                <span>Platform: MT5</span>
+                <span class="dot">•</span>
+                <span>Instrument: XAUUSD</span>
+                <span class="dot">•</span>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Overview (Slide 2) -->
+    <section class="section" id="pillars">
+        <div class="container line-border-left">
+            <div class="section-header fade-up">
+                <h3 class="gold-text uppercase-label">The Foundation</h3>
+                <h2>The Five Pillars of Lily v4.0</h2>
+                <p>Every trade is the result of five interconnected systems working synchronously.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card glass fade-up hover-lift">
+                    <div class="icon-box gold-text">01</div>
+                    <h4>Signal Engine</h4>
+                    <p>A composite 4-component scoring system that evaluates the market. It only acts when the evidence
+                        across VP, DXY, EMA, and RSI is strong enough.</p>
+                </div>
+                <div class="card glass fade-up hover-lift" style="transition-delay: 100ms;">
+                    <div class="icon-box gold-text">02</div>
+                    <h4>Pre-Trade Filters</h4>
+                    <p>A protective layer running independently. It guards against bad conditions like wrong sessions,
+                        news events, excessive spreads, and hostile market regimes.</p>
+                </div>
+                <div class="card glass fade-up hover-lift" style="transition-delay: 200ms;">
+                    <div class="icon-box gold-text">03</div>
+                    <h4>Adaptive Risk</h4>
+                    <p>A self-recalibrating engine adjusting position size based on recent broker trade history, actual
+                        market volatility, and equity curve momentum.</p>
+                </div>
+                <div class="card glass fade-up hover-lift" style="transition-delay: 300ms;">
+                    <div class="icon-box gold-text">04</div>
+                    <h4>Trade Management</h4>
+                    <p>Actively manages open positions with structure-aware trailing stops behind HVNs and dynamic
+                        partial closes at the POC.</p>
+                </div>
+                <div class="card glass fade-up hover-lift" style="transition-delay: 400ms; grid-column: span 2;">
+                    <div class="icon-box gold-text">05</div>
+                    <h4>Prop Firm Compliance</h4>
+                    <p>A dedicated layer strictly monitoring daily drawdown, total drawdown, trailing drawdown, and
+                        weekend closes to keep the account compliant with rules like The5ers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Trade Filters (Slide 3) -->
+    <section class="section dark-bg" id="pre-trade">
+        <div class="container layout-split reverse-split">
+            <div class="image-content fade-up" style="transition-delay: 200ms;">
+                <div class="glass data-panel">
+                    <h4 class="gold-text">Market Regime (ADX Filter)</h4>
+                    <ul class="data-list">
+                        <li><strong>Ranging (ADX &lt; 35):</strong> Normal operation — full entries.</li>
+                        <li><strong>Trending (ADX 35-50):</strong> Reduced lot size (75%) & stronger signal needed.</li>
+                        <li><strong>Volatile (ADX &gt; 50):</strong> All new entries paused entirely.</li>
+                    </ul>
+                    <hr>
+                    <h4 class="gold-text">Session Filter</h4>
+                    <table class="glass-table">
+                        <tr>
+                            <th>Session</th>
+                            <th>Time (GMT)</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>Asian</td>
+                            <td>00:00 – 08:00</td>
+                            <td>Blocked</td>
+                        </tr>
+                        <tr>
+                            <td>London</td>
+                            <td>08:00 – 13:00</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>London/NY</td>
+                            <td>13:00 – 16:00</td>
+                            <td>Preferred (1.2x Lots)</td>
+                        </tr>
+                        <tr>
+                            <td>New York</td>
+                            <td>16:00 – 21:00</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Rollover</td>
+                            <td>21:00 – 00:00</td>
+                            <td>Blocked / SL to BE</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="text-content fade-up">
+                <h3 class="gold-text uppercase-label">Before A Trade Is Taken</h3>
+                <h2>The Pre-Trade Filter Layer</h2>
+                <p class="lede">If even one condition fails, no trade is placed.</p>
+                <div class="accordion">
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>EA Readiness & Spread Check</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>Volume profile must have 100+ bars, ATR must be available, and the dynamic spread
+                                baseline (50+ samples) must be stable. Spreads exceeding 2.5x the average automatically
+                                block entries.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>News & Rollover Protection</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>Uses MT5's economic calendar to halt trading 30-60 mins before and 15-30 mins after
+                                high-impact events. Protects against Wednesday rollover swap-widening by moving stops to
+                                Breakeven.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>SL Delay & Cooldown</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>Mandatory 5-minute pause after an SL hit. If 3 stop losses occur within an hour, a strict
+                                circuit breaker pauses the system. Guaranteed 2-minute re-entry cooldown.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signal Engine (Slide 4) -->
+    <section class="section" id="signal">
+        <div class="container layout-split">
+            <div class="text-content fade-up">
+                <h3 class="gold-text uppercase-label">Directional Logic</h3>
+                <h2>The 4-Component Signal Engine</h2>
+                <p class="lede">Score = (VP × 2.0) + (DXY × 2.0) + (EMA × 1.5) + (RSI × 1.5)</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="bullet glow-bullet"></div>
+                        <div>
+                            <h4>Volume Profile Mean-Reversion (Primary)</h4>
+                            <p>Maps institutional price activity. When price hits the Value Area High (VAH), it sells
+                                targeting the Point of Control (POC). When at the Value Area Low (VAL), it buys.
+                                Verified by tick-level Delta Volume order flow.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet glow-bullet"></div>
+                        <div>
+                            <h4>DXY VW-ROC (Intermarket Correlation)</h4>
+                            <p>Reads the US Dollar Index using a Volume-Weighted Rate of Change. If DXY drops heavily on
+                                high volume, it signals a Gold buy. This isn't just price—it's macroeconomic edge.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet glow-bullet"></div>
+                        <div>
+                            <h4>Momentum Alignment (EMA & RSI)</h4>
+                            <p>EMA 5/20 measures session bias distance, and a graduated RSI dictates extreme
+                                overbought/oversold states (scaling from ±0.3 to ±1.0).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content fade-up" style="transition-delay: 200ms;">
+                <div class="image-wrapper glass image-glow">
+                    <img src="assets/vol_profile.png" alt="Volume Profile Visualization" class="feature-img">
+                </div>
+                <div class="signal-score glass mt-4">
+                    <h4 class="gold-text text-center">Execution Thresholds</h4>
+                    <ul class="clean-list">
+                        <li><strong>±0.65+ (Very Strong):</strong> Trades in all regimes</li>
+                        <li><strong>±0.45 – 0.64 (Strong):</strong> Required to trade in Trending regime</li>
+                        <li><strong>±0.25 – 0.44 (Moderate):</strong> Allowed in Ranging regime</li>
+                        <li><strong>
+                                < ±0.24 (Weak):</strong> Trade Blocked</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lot Size & ATR (Slide 5 & 6) -->
+    <section class="section dark-bg" id="execution">
+        <div class="container text-center max-w-800 fade-up">
+            <h3 class="gold-text uppercase-label">Execution</h3>
+            <h2>Precision Risk Sizing & ATR Limits</h2>
+            <p class="lede mb-4">Lily does not use fixed lots or fixed pip SL/TP. Everything is dynamic relative to
+                mathematically defined market risk.</p>
+            <div class="grid grid-2 text-left mt-4">
+                <div class="card glass border-gold">
+                    <h4 class="gold-text">Multi-Layer Cap Logic</h4>
+                    <p>Calculates base % risk via Tick Value, then applies a strict hard ceiling, equity risk caps (max
+                        5%), margin safety caps (max 80%), prop firm loss buffers, and finally normalizes to broker lot
+                        steps.</p>
+                </div>
+                <div class="card glass border-gold">
+                    <h4 class="gold-text">ATR-Adaptive Stops & Targets</h4>
+                    <p><strong>SL:</strong> 1.75x ATR<br><strong>TP:</strong> 5.0x ATR</p>
+                    <p>Creates an asymmetric R:R of ~2.85:1. Stops widen organically during news shocks to prevent
+                        hunting, and tighten during consolidations to improve risk efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adaptive Risk Engine (Slide 7) -->
+    <section class="section" id="risk">
+        <div class="container layout-split reverse-split">
+            <div class="image-content fade-up">
+                <div class="image-wrapper glass image-glow">
+                    <img src="assets/risk_engine.png" alt="Adaptive Risk Dashboard" class="feature-img">
+                </div>
+            </div>
+            <div class="text-content fade-up" style="transition-delay: 200ms;">
+                <h3 class="gold-text uppercase-label">The Brain</h3>
+                <h2>The Adaptive Risk Engine</h2>
+                <p class="lede">The most sophisticated piece of Lily v4.0. It continuously monitors performance and
+                    recalibrates exposure.</p>
+                <div class="accordion">
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>Restart Safety & True Day Balance</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>On every restart, Lily rebuilds its entire state from actual broker trade history. It
+                                calculates the True Day Open Balance preventing misreporting of daily limits after VPS
+                                crashes.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>Time-Decayed Loss Streaks</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>Rebuilds consecutive losses but applies a 50% discount to losses 24h old, and forgets
+                                losses past 48h. A streak of 2 lowers lots to 75%. A streak of 5 halts trading fully.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>Equity Curve EMAs</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>Replays the last 30 trades to build Fast & Slow EMAs on its own returns. If the strategy
+                                goes "out of form" (Fast < Slow), it automatically scales risk down 25%.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item glass">
+                        <div class="acc-header">
+                            <h4>ATR Volatility Scaling</h4><span class="icon">+</span>
+                        </div>
+                        <div class="acc-content">
+                            <p>If the current ATR spikes to >1.5x its average, lot size is slashed to 75%. If >2.0x
+                                average, slashed to 50%—forcing survival during market shocks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trade Management (Slide 8) -->
+    <section class="section dark-bg" id="management">
+        <div class="container">
+            <div class="section-header fade-up text-center">
+                <h3 class="gold-text uppercase-label">Post-Entry</h3>
+                <h2>Active Trade Management</h2>
+            </div>
+            <div class="grid grid-2">
+                <div class="card glass fade-up hover-lift">
+                    <div class="icon-box">🛡️</div>
+                    <h4>Structure-Aware Trailing Stops</h4>
+                    <p>Instead of trailing by a fixed pip distance, Lily scans the Volume Profile for High Volume Nodes
+                        (HVNs). The trailing stop tucks itself behind these heavy volume zones, using them as structural
+                        barricades against price spikes.</p>
+                </div>
+                <div class="card glass fade-up hover-lift" style="transition-delay: 100ms;">
+                    <div class="icon-box">💰</div>
+                    <h4>Dynamic Partial Closes at POC</h4>
+                    <p>When the trade reaches the original mean-reversion target—the Point of Control (POC)—the EA
+                        closes 40% to secure edge. The Stop Loss on the remaining 60% is instantly moved to Breakeven.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The5ers Compliance (Slide 9 & 13) -->
+    <section class="section" id="compliance">
+        <div class="container line-border-left">
+            <div class="section-header fade-up">
+                <h3 class="gold-text uppercase-label">Prop Firm Security</h3>
+                <h2>The5ers Compliance Layer</h2>
+                <p>Lily v4.0 explicitly protects against drawdowns and is architecturally incapable of violating The5ers
+                    prohibited practices.</p>
+            </div>
+
+            <div class="grid grid-3 mb-6">
+                <!-- Core Prop Limits -->
+                <div class="card glass fade-up border-gold">
+                    <h4 class="gold-text">Drawdown Halts</h4>
+                    <p>Monitors Initial Balance. When 80% of Daily Loss (4%) or Total Loss (8%) is hit, trading is
+                        forcefully halted. Trailing DD tracking is built-in for standard FTMO/MFF models.</p>
+                </div>
+                <div class="card glass fade-up border-gold" style="transition-delay: 100ms;">
+                    <h4 class="gold-text">Equity HWM Protect</h4>
+                    <p>A separate safeguard protecting the account from recovery failure. If equity drops below 85% of
+                        its all-time High-Water Mark, all operations cease.</p>
+                </div>
+                <div class="card glass fade-up border-gold" style="transition-delay: 200ms;">
+                    <h4 class="gold-text">Weekend & Daily Targets</h4>
+                    <p>Automatic Friday 22:00 GMT closures prevent weekend gaps. Hitting a 2% Daily Profit target
+                        smoothly shifts the EA into 'Conservative Mode'.</p>
+                </div>
+            </div>
+
+            <div class="compliance-box glass fade-up">
+                <h3 class="gold-text text-center mb-4">The5ers Prohibited Practice Checklist</h3>
+                <div class="compliance-grid">
+                    <div class="comp-item"><span class="badge pass">PASS</span> Arbitrage Trade Exploitation</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> High-Frequency Trading (HFT)</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Bulk / Multi-Trade Opening</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> News Bracketing (Stop Orders)</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Exploiting Feed Glitches</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Trade Coordination / Copying</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> One-Sided Directional Bets</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> EA Scalping During Rollover</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Shared 3rd Party EA Footprints</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Missing Source Code Ownership</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Sub-second Tick Scalping</div>
+                    <div class="comp-item"><span class="badge pass">PASS</span> Hedge / Reverse Arbitrage</div>
+                </div>
+                <p class="text-center text-muted mt-4 text-sm">Note: Rollover scalping is explicitly blocked. The EA
+                    blocks new entries from 21:00 GMT and moves open stops to BE before swap widening occurs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Backtest Results Placeholder -->
+    <section class="section dark-bg" id="results">
+        <div class="container text-center fade-up">
+            <h3 class="gold-text uppercase-label">Proof of Concept</h3>
+            <h2>Backtest Performance</h2>
+            <p class="lede mb-4">Real data over extended periods on XAUUSD. <br> Period: <strong>1-Jan-2026 to
+                    29-Mar-2026</strong></p>
+            <div class="presentation-frame glass fade-up"
+                style="max-width: 900px; margin: 0 auto; margin-bottom: 2rem;">
+                <div class="frame-header">
+                    <div class="frame-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="frame-title">MT5 Strategy Tester Report - Lily V4</div>
+                </div>
+                <div class="report-dashboard">
+                    <div class="report-hero">
+                        <div class="stat-card">
+                            <span class="stat-label">Total Net Profit</span>
+                            <span class="stat-value gold-text">$1,185.75</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Max Drawdown</span>
+                            <span class="stat-value">5.13%</span>
+                            <span class="stat-sub">($317.73 Equity DD)</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Profit Factor</span>
+                            <span class="stat-value text-green">1.45</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Win Rate</span>
+                            <span class="stat-value gold-text">74.20%</span>
+                            <span class="stat-sub">(345 Total Trades)</span>
+                        </div>
+                    </div>
+
+                    <div class="report-details">
+                        <div class="detail-row">
+                            <span>History Quality:</span> <strong>98%</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Expected Payoff:</span> <strong>3.44</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Sharpe Ratio:</span> <strong class="text-green">8.89</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Recovery Factor:</span> <strong>3.73</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Long Trades (Won %):</span> <strong>124 (73.39%)</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Short Trades (Won %):</span> <strong>221 (74.66%)</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Max Consecutive Wins:</span> <strong>23 ($269.41)</strong>
+                        </div>
+                        <div class="detail-row">
+                            <span>Max Consecutive Losses:</span> <strong class="text-red">7 (-$172.95)</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backtest Image -->
+            <div class="presentation-frame glass fade-up" style="max-width: 900px; margin: 0 auto;">
+                <div class="frame-header">
+                    <div class="frame-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="frame-title">Raw Backtest Data (1-Jan-2026 to 29-Mar-2026)</div>
+                </div>
+                <div class="image-wrapper image-zoom-container">
+                    <div class="placeholder-overlay">
+                        <span>Click to Expand Report</span>
+                    </div>
+                    <img src="Backtest_results.PNG" alt="Complete Backtest Data from 1-Jan-2026 to 29-Mar-2026"
+                        class="feature-img" style="cursor: pointer;">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-close" id="modalClose">&times;</div>
+        <img class="modal-content" id="modalImage" alt="Expanded Backtest">
+    </div>
+
+    <!-- Footer (Slide 14) -->
+    <footer class="footer">
+        <div class="container">
+            <h2 class="logo">Lily<span class="gold-text">V4.0</span></h2>
+            <p class="footer-note">Capital preservation is the first job. Profit follows from surviving long enough to
+                let the edge play out. Every parameter in this EA exists to serve that principle.</p>
+            <div class="footer-copy">© 2026 Lily V4 Algorithm | Built for MT5 | Gold Specialist</div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>

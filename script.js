@@ -20,15 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navbar blur on scroll
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(19, 21, 31, 0.9)';
-            navbar.style.backdropFilter = 'blur(20px)';
-        } else {
-            navbar.style.background = 'rgba(19, 21, 31, 0.6)';
-            navbar.style.backdropFilter = 'blur(12px)';
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(19, 21, 31, 0.9)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(19, 21, 31, 0.6)';
+                navbar.style.backdropFilter = 'blur(12px)';
+            }
+        });
+    }
 
     // Smooth scroll for anchor tags
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -113,6 +115,27 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === "Escape" && modal.classList.contains("show")) {
                 closeModal();
             }
+        });
+    }
+
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('show');
+            document.body.style.overflow = mobileNav.classList.contains('show') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile nav on link click
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            });
         });
     }
 });
